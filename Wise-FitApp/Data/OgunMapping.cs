@@ -14,7 +14,7 @@ namespace Wise_FitApp.Data
         {
             ToTable("Ogunler");
 
-            Property(x => x.OgunAdi).IsRequired().HasMaxLength(50);
+            //Property(x => x.OgunAdi).IsRequired().HasMaxLength(50);
             Property(x => x.OlusturulmaTarihi).IsRequired();
             Property(x => x.Ogunler).IsRequired();
             Property(x => x.ToplamKalori).IsOptional();

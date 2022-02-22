@@ -21,7 +21,6 @@ namespace Wise_FitApp.Model
         public Kategori Kategori { get; set; } //TODO : Navigation Property
         public virtual List<Ogun> Ogunler { get; set; }  //virtual mantığını hoca ile görüşeceğiz.
         public Porsiyon Porsiyonlar { get; set; }
-        //public BesinTipi BesinTipi { get; set; }  //Hangisi daha mantıklı class mı enum mı?
 
     }
 }

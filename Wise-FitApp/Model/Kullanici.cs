@@ -14,11 +14,12 @@ namespace Wise_FitApp.Model
         {
             Ogunler = new List<Ogun>();
         }
+        //Günlük alınacak kalori database'de tutulabilir.Bunun için 
         public int kullaniciId { get; set; } //guid??
         public string TamAd { get; set; }
         public string Email { get; set; }
         public string kullaniciAdi { get; set; }
-        public string Sifre { get; set; }
+        public string Sifre { get; set; } //ASCII'de türkçe karakter yetersiz kalacak! //MD5  
         public decimal Boy { get; set; }
         public decimal Kilo { get; set; }
         public int Yas { get; set; }
