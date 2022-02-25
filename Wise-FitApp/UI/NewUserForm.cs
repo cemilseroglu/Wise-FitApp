@@ -37,22 +37,29 @@ namespace Wise_FitApp.UI
                     db = new AppDbContext();
                     try
                     {
-                        Kullanici yeniKullanici = new Kullanici();
-                        yeniKullanici.TamAd = txtAdSoyad.Text.Trim();
-                        yeniKullanici.kullaniciAdi = txtKullaniciAdi.Text.Trim();
-                        yeniKullanici.Cinsiyet = (Cinsiyet)cmbCinsiyet.SelectedIndex;
-                        yeniKullanici.Boy = Convert.ToDecimal(txtBoy.Text);
-                        yeniKullanici.Kilo = Convert.ToDecimal(txtKilo.Text);
-                        yeniKullanici.Email = txtEmail.Text.Trim();
-                        yeniKullanici.Yas = Convert.ToInt32(txtYas.Text);
-                        yeniKullanici.Sifre = txtSifre.Text;
-                        db.Kullanici.Add(yeniKullanici);
-                        db.SaveChanges();
-                        MessageBox.Show("Kayıt Oldunuz.");
-                        this.Hide();
-                        LoginForm frmLogin = new LoginForm();
-                        frmLogin.ShowDialog();
-                        
+                        if (db.Kullanici.Where(y=>y.Email==txtEmail.Text).Any())
+                        {
+                            MessageBox.Show("Bu email kullanılmakta,başka bir email giriniz.");
+                            txtEmail.Clear();
+                        }
+                        else
+                        {
+                            Kullanici yeniKullanici = new Kullanici();
+                            yeniKullanici.TamAd = txtAdSoyad.Text.Trim();
+                            yeniKullanici.kullaniciAdi = txtKullaniciAdi.Text.Trim();
+                            yeniKullanici.Cinsiyet = (Cinsiyet)cmbCinsiyet.SelectedIndex;
+                            yeniKullanici.Boy = Convert.ToDecimal(txtBoy.Text);
+                            yeniKullanici.Kilo = Convert.ToDecimal(txtKilo.Text);
+                            yeniKullanici.Email = txtEmail.Text.Trim();
+                            yeniKullanici.Yas = Convert.ToInt32(txtYas.Text);
+                            yeniKullanici.Sifre = txtSifre.Text;
+                            db.Kullanici.Add(yeniKullanici);
+                            db.SaveChanges();
+                            MessageBox.Show("Kayıt Oldunuz.");
+                            this.Hide();
+                            LoginForm frmLogin = new LoginForm();
+                            frmLogin.ShowDialog();
+                        }
                     }
                     catch (Exception)
                     {

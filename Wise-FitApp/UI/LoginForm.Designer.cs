@@ -31,7 +31,7 @@ namespace Wise_FitApp.UI
         {
             this.button1 = new System.Windows.Forms.Button();
             this.linkLabelKayitOl = new System.Windows.Forms.LinkLabel();
-            this.txtKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSifre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,13 +61,13 @@ namespace Wise_FitApp.UI
             this.linkLabelKayitOl.Text = "Kayıt Ol";
             this.linkLabelKayitOl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelKayitOl_LinkClicked);
             // 
-            // txtKullaniciAdi
+            // txtEmail
             // 
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(119, 33);
-            this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(4);
-            this.txtKullaniciAdi.Name = "txtKullaniciAdi";
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(217, 22);
-            this.txtKullaniciAdi.TabIndex = 3;
+            this.txtEmail.Location = new System.Drawing.Point(119, 33);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(217, 22);
+            this.txtEmail.TabIndex = 3;
             // 
             // txtSifre
             // 
@@ -81,12 +81,12 @@ namespace Wise_FitApp.UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 36);
+            this.label1.Location = new System.Drawing.Point(64, 33);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Kullanıcı Adı :";
+            this.label1.Text = "Email :";
             // 
             // label2
             // 
@@ -118,7 +118,7 @@ namespace Wise_FitApp.UI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSifre);
-            this.Controls.Add(this.txtKullaniciAdi);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.linkLabelKayitOl);
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -133,7 +133,7 @@ namespace Wise_FitApp.UI
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabelKayitOl;
-        private System.Windows.Forms.TextBox txtKullaniciAdi;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSifre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
