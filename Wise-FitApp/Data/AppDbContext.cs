@@ -9,7 +9,7 @@ using Wise_FitApp.Model;
 
 namespace Wise_FitApp.Data
 {
-    class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext():base("name=WiseDbContext")
         {

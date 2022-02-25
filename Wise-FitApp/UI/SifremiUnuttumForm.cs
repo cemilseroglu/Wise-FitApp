@@ -7,17 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Wise_FitApp.Data;
 
 namespace Wise_FitApp.UI
 {
-    public partial class MainForm : Form
+    public partial class SifremiUnuttumForm : Form
     {
-        public MainForm(int gelenKullaniciId, AppDbContext db)
+        public SifremiUnuttumForm()
         {
             InitializeComponent();
         }
-
-
     }
 }
