@@ -48,6 +48,9 @@ namespace Wise_FitApp.UI
             this.btnKullanıcıEkle = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSifreTekrar = new System.Windows.Forms.TextBox();
+            this.lbl6Karakter = new System.Windows.Forms.Label();
+            this.lblEnAz1Sayi = new System.Windows.Forms.Label();
+            this.lblGereksinim = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -171,6 +174,7 @@ namespace Wise_FitApp.UI
             this.txtSifre.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(137, 22);
             this.txtSifre.TabIndex = 16;
+            this.txtSifre.TextChanged += new System.EventHandler(this.txtSifre_TextChanged);
             // 
             // cmbCinsiyet
             // 
@@ -185,6 +189,7 @@ namespace Wise_FitApp.UI
             // 
             // btnKullanıcıEkle
             // 
+            this.btnKullanıcıEkle.Enabled = false;
             this.btnKullanıcıEkle.Location = new System.Drawing.Point(111, 384);
             this.btnKullanıcıEkle.Name = "btnKullanıcıEkle";
             this.btnKullanıcıEkle.Size = new System.Drawing.Size(100, 31);
@@ -210,11 +215,43 @@ namespace Wise_FitApp.UI
             this.txtSifreTekrar.Size = new System.Drawing.Size(136, 22);
             this.txtSifreTekrar.TabIndex = 15;
             // 
+            // lbl6Karakter
+            // 
+            this.lbl6Karakter.AutoSize = true;
+            this.lbl6Karakter.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl6Karakter.Location = new System.Drawing.Point(253, 318);
+            this.lbl6Karakter.Name = "lbl6Karakter";
+            this.lbl6Karakter.Size = new System.Drawing.Size(112, 17);
+            this.lbl6Karakter.TabIndex = 19;
+            this.lbl6Karakter.Text = "En az 6 karakter";
+            // 
+            // lblEnAz1Sayi
+            // 
+            this.lblEnAz1Sayi.AutoSize = true;
+            this.lblEnAz1Sayi.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblEnAz1Sayi.Location = new System.Drawing.Point(253, 351);
+            this.lblEnAz1Sayi.Name = "lblEnAz1Sayi";
+            this.lblEnAz1Sayi.Size = new System.Drawing.Size(85, 17);
+            this.lblEnAz1Sayi.TabIndex = 20;
+            this.lblEnAz1Sayi.Text = "En az 1 sayı";
+            // 
+            // lblGereksinim
+            // 
+            this.lblGereksinim.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblGereksinim.Location = new System.Drawing.Point(217, 384);
+            this.lblGereksinim.Name = "lblGereksinim";
+            this.lblGereksinim.Size = new System.Drawing.Size(148, 39);
+            this.lblGereksinim.TabIndex = 21;
+            this.lblGereksinim.Text = "Şifre gereksinimlerini sağlamalısınız.";
+            // 
             // NewUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 427);
+            this.Controls.Add(this.lblGereksinim);
+            this.Controls.Add(this.lblEnAz1Sayi);
+            this.Controls.Add(this.lbl6Karakter);
             this.Controls.Add(this.btnKullanıcıEkle);
             this.Controls.Add(this.cmbCinsiyet);
             this.Controls.Add(this.txtSifre);
@@ -262,5 +299,8 @@ namespace Wise_FitApp.UI
         private System.Windows.Forms.Button btnKullanıcıEkle;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtSifreTekrar;
+        private System.Windows.Forms.Label lbl6Karakter;
+        private System.Windows.Forms.Label lblEnAz1Sayi;
+        private System.Windows.Forms.Label lblGereksinim;
     }
 }

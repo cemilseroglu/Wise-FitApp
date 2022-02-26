@@ -35,7 +35,7 @@ namespace Wise_FitApp.UI
             this.txtSifre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabelSifreUnut = new System.Windows.Forms.LinkLabel();
+            this.chkGoster = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -73,6 +73,7 @@ namespace Wise_FitApp.UI
             // 
             this.txtSifre.Location = new System.Drawing.Point(119, 84);
             this.txtSifre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSifre.Multiline = true;
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(217, 22);
@@ -98,23 +99,23 @@ namespace Wise_FitApp.UI
             this.label2.TabIndex = 6;
             this.label2.Text = "Şifre :";
             // 
-            // linkLabelSifreUnut
+            // chkGoster
             // 
-            this.linkLabelSifreUnut.AutoSize = true;
-            this.linkLabelSifreUnut.Location = new System.Drawing.Point(180, 110);
-            this.linkLabelSifreUnut.Name = "linkLabelSifreUnut";
-            this.linkLabelSifreUnut.Size = new System.Drawing.Size(108, 17);
-            this.linkLabelSifreUnut.TabIndex = 7;
-            this.linkLabelSifreUnut.TabStop = true;
-            this.linkLabelSifreUnut.Text = "Şifremi Unuttum";
-            this.linkLabelSifreUnut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSifreUnut_LinkClicked);
+            this.chkGoster.AutoSize = true;
+            this.chkGoster.Location = new System.Drawing.Point(180, 110);
+            this.chkGoster.Name = "chkGoster";
+            this.chkGoster.Size = new System.Drawing.Size(116, 21);
+            this.chkGoster.TabIndex = 7;
+            this.chkGoster.Text = "Şifreyi Göster";
+            this.chkGoster.UseVisualStyleBackColor = true;
+            this.chkGoster.CheckedChanged += new System.EventHandler(this.chkGoster_CheckedChanged);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 229);
-            this.Controls.Add(this.linkLabelSifreUnut);
+            this.Controls.Add(this.chkGoster);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSifre);
@@ -137,6 +138,6 @@ namespace Wise_FitApp.UI
         private System.Windows.Forms.TextBox txtSifre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabelSifreUnut;
+        private System.Windows.Forms.CheckBox chkGoster;
     }
 }

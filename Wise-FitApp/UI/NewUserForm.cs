@@ -19,7 +19,8 @@ namespace Wise_FitApp.UI
         {
             InitializeComponent();
         }
-        
+        bool altiKarakter;
+        bool birSayi;
         private void btnKullanıcıEkle_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtAdSoyad.Text.Trim()) || string.IsNullOrEmpty(txtEmail.Text.Trim()) || string.IsNullOrEmpty(txtBoy.Text) || string.IsNullOrEmpty(txtKilo.Text) || string.IsNullOrEmpty(txtKullaniciAdi.Text.Trim()) || string.IsNullOrEmpty(txtSifre.Text.Trim()) || string.IsNullOrEmpty(txtSifreTekrar.Text.Trim()) || string.IsNullOrEmpty(txtYas.Text)||string.IsNullOrEmpty(cmbCinsiyet.Text)) 
@@ -44,6 +45,10 @@ namespace Wise_FitApp.UI
                         }
                         else
                         {
+                            if (txtSifre.Text.Contains("a"))
+                            {
+
+                            }
                             Kullanici yeniKullanici = new Kullanici();
                             yeniKullanici.TamAd = txtAdSoyad.Text.Trim();
                             yeniKullanici.kullaniciAdi = txtKullaniciAdi.Text.Trim();
@@ -70,6 +75,62 @@ namespace Wise_FitApp.UI
                 
 
             }
+        }
+
+        private void txtSifre_TextChanged(object sender, EventArgs e)
+        {
+            birSayi = false;
+            altiKarakter = false;
+            lblGereksinim.Visible = true;
+            if (!String.IsNullOrEmpty(txtSifre.Text))
+            {
+                char[] karakterler = txtSifre.Text.ToCharArray();
+                karakterSayisi();
+                void karakterSayisi()
+                {
+                    if (karakterler.Length>=6)
+                    {
+                        altiKarakter = true;
+                        lbl6Karakter.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        altiKarakter = false;
+                        lbl6Karakter.ForeColor = Color.Red;
+                    }
+                    sayiKontrol();
+                }
+                void sayiKontrol()
+                {
+                    foreach (char karakter in karakterler)
+                    {
+                        if (char.IsNumber(karakter) == true)
+                        {
+                            birSayi = true;
+                            break;
+                        }
+                    }
+                    if (birSayi == true)
+                    {
+                        lblEnAz1Sayi.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        lblEnAz1Sayi.ForeColor = Color.Red;
+                    }
+                    sonlandir();
+                }
+                void sonlandir()
+                {
+                    if (birSayi && altiKarakter)
+                    {
+                        btnKullanıcıEkle.Enabled = true;
+                        lblGereksinim.Visible = false;
+                    }
+                }
+
+            }
+           
         }
     }
 }

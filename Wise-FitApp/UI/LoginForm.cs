@@ -58,5 +58,17 @@ namespace Wise_FitApp.UI
             SifremiUnuttumForm frmSifre = new SifremiUnuttumForm();
             frmSifre.ShowDialog();
         }
+
+        private void chkGoster_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkGoster.CheckState==CheckState.Checked)
+            {
+                txtSifre.UseSystemPasswordChar = true;
+            }
+            else if (chkGoster.CheckState==CheckState.Unchecked)
+            {
+                txtSifre.UseSystemPasswordChar = false;
+            }
+        }
     }
 }
