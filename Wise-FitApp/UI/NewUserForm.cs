@@ -82,6 +82,7 @@ namespace Wise_FitApp.UI
             birSayi = false;
             altiKarakter = false;
             lblGereksinim.Visible = true;
+            btnKullanıcıEkle.Enabled = false;
             if (!String.IsNullOrEmpty(txtSifre.Text))
             {
                 char[] karakterler = txtSifre.Text.ToCharArray();
