@@ -31,7 +31,7 @@ namespace Wise_FitApp.UI
 
         private void egzersizToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void besinEkleToolStripMenuItem_Click(object sender, EventArgs e)
