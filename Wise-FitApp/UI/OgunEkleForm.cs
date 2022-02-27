@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Wise_FitApp.UI
 {
-    public partial class KaloriTakipForm : Form
+    public partial class OgunEkleForm : Form
     {
-        public KaloriTakipForm()
+        public OgunEkleForm()
         {
             InitializeComponent();
         }

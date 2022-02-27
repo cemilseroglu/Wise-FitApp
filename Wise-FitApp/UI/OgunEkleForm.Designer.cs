@@ -1,7 +1,6 @@
-﻿
-namespace Wise_FitApp.UI
+﻿namespace Wise_FitApp.UI
 {
-    partial class SifremiUnuttumForm
+    partial class OgunEkleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +28,10 @@ namespace Wise_FitApp.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // SifremiUnuttumForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "SifremiUnuttumForm";
-            this.Text = "Sifremi Unuttum";
-            this.ResumeLayout(false);
-
+            this.Text = "OgunEkleForm";
         }
 
         #endregion
