@@ -18,6 +18,25 @@ namespace Wise_FitApp.UI
             InitializeComponent();
         }
 
+        private void pbKahvalti_Click(object sender, EventArgs e)
+        {
+            OgunEkleForm ogunEkleForm = new OgunEkleForm();
+            ogunEkleForm.ShowDialog();
+        }
 
+        private void raporToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void egzersizToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void besinEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

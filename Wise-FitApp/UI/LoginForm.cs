@@ -53,11 +53,7 @@ namespace Wise_FitApp.UI
             this.Hide();
         }
 
-        private void linkLabelSifreUnut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            SifremiUnuttumForm frmSifre = new SifremiUnuttumForm();
-            frmSifre.ShowDialog();
-        }
+
 
         private void chkGoster_CheckedChanged(object sender, EventArgs e)
         {
