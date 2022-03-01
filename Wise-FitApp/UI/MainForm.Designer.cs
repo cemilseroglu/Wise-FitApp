@@ -33,7 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbKahvalti = new System.Windows.Forms.PictureBox();
+            this.pbOgunEkle = new System.Windows.Forms.PictureBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.raporToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.egzersizToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +42,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbKahvalti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOgunEkle)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pbKahvalti);
+            this.panel1.Controls.Add(this.pbOgunEkle);
             this.panel1.Location = new System.Drawing.Point(259, 41);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(850, 401);
@@ -84,16 +84,18 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Öğün Ekle";
             // 
-            // pbKahvalti
+            // pbOgunEkle
             // 
-            this.pbKahvalti.Image = ((System.Drawing.Image)(resources.GetObject("pbKahvalti.Image")));
-            this.pbKahvalti.Location = new System.Drawing.Point(9, 19);
-            this.pbKahvalti.Name = "pbKahvalti";
-            this.pbKahvalti.Size = new System.Drawing.Size(56, 50);
-            this.pbKahvalti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbKahvalti.TabIndex = 1;
-            this.pbKahvalti.TabStop = false;
-            this.pbKahvalti.Click += new System.EventHandler(this.pbKahvalti_Click);
+            this.pbOgunEkle.Image = ((System.Drawing.Image)(resources.GetObject("pbOgunEkle.Image")));
+            this.pbOgunEkle.Location = new System.Drawing.Point(9, 19);
+            this.pbOgunEkle.Name = "pbOgunEkle";
+            this.pbOgunEkle.Size = new System.Drawing.Size(56, 50);
+            this.pbOgunEkle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbOgunEkle.TabIndex = 1;
+            this.pbOgunEkle.TabStop = false;
+            this.pbOgunEkle.Click += new System.EventHandler(this.pbOgunEkle_Click);
+            this.pbOgunEkle.MouseEnter += new System.EventHandler(this.pbOgunEkle_MouseEnter);
+            this.pbOgunEkle.MouseLeave += new System.EventHandler(this.pbOgunEkle_MouseLeave);
             // 
             // monthCalendar1
             // 
@@ -155,11 +157,13 @@
             this.Controls.Add(this.lblAlinmasiGerekenKalori);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbKahvalti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOgunEkle)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -179,6 +183,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pbKahvalti;
+        private System.Windows.Forms.PictureBox pbOgunEkle;
     }
 }

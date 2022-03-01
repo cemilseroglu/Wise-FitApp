@@ -21,6 +21,7 @@ namespace Wise_FitApp.Data
             Property(x => x.Kalori).IsRequired();
 
             Property(x => x.Kalori).IsRequired();
+            Property(x => x.BesinKategorisi).IsRequired();
 
             //KategoriId ???
             //List Ogunler ???

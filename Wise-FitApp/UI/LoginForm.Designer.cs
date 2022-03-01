@@ -97,7 +97,7 @@ namespace Wise_FitApp.UI
             // 
             this.chkGoster.AutoSize = true;
             this.chkGoster.Location = new System.Drawing.Point(135, 89);
-            this.chkGoster.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkGoster.Margin = new System.Windows.Forms.Padding(2);
             this.chkGoster.Name = "chkGoster";
             this.chkGoster.Size = new System.Drawing.Size(88, 17);
             this.chkGoster.TabIndex = 7;
@@ -118,6 +118,7 @@ namespace Wise_FitApp.UI
             this.Controls.Add(this.linkLabelKayitOl);
             this.Controls.Add(this.button1);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();
