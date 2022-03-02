@@ -17,8 +17,9 @@ namespace Wise_FitApp.Model
         public int OgunId { get; set; } //Aralarında sadece 1-1 ilişki varsa key ve foreign key tanımlanması gerekiyor?(bunu sormalıyız)
         //public string OgunAdi { get; set; }
         public DateTime OlusturulmaTarihi { get; set; } = DateTime.Now;
-        public Ogunler OgunTipi { get; set; } //OgunTipi olarak değişecek
-        public decimal? ToplamKalori { get; set; } // ? eklenmeli nullable sadece ef'de yapıldı.Denenecek.
+        //public Ogunler OgunTipi { get; set; } //OgunTipi olarak değişecek
+        public string OgunTipi { get; set; }
+        //public decimal? ToplamKalori { get; set; } // ? eklenmeli nullable sadece ef'de yapıldı.Denenecek.
         //public virtual List<Kullanici> Kullanicilar { get; set; } //Liste yerine kullanici/kullaniciid kullanilabilir çoka çok olmasına gerek yok.bire çok olucak.
         public int kullaniciId { get; set; }
         public Kullanici Kullanici { get; set; } //navigation property
@@ -26,7 +27,7 @@ namespace Wise_FitApp.Model
     }
 }
 
-public enum Ogunler //Enuma gerek yok ogun adı gerek yok.Ya enum ya string seçilecek.
-{
-    Kahvalti,AraOgun1,OgleYemegi,AraOgun2,AraOgun3,AksamYemegi,Kacamak
-}
+//public enum Ogunler //Enuma gerek yok ogun adı gerek yok.Ya enum ya string seçilecek.
+//{
+//    Kahvalti,AraOgun1,OgleYemegi,AraOgun2,AraOgun3,AksamYemegi,Kacamak
+//}

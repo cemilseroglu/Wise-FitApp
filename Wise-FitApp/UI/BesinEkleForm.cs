@@ -26,7 +26,7 @@ namespace Wise_FitApp.UI
             BesinListele();
             KategoriListesi();
             this.dgvBesinListesi.Columns["Kategori"].Visible = false;
-            //this.dgvBesinListesi.Columns["BesinId"].Visible = false;
+            this.dgvBesinListesi.Columns["BesinId"].Visible = false;
         }
 
         private void KategoriListesi()

@@ -136,7 +136,7 @@ namespace Wise_FitApp.UI
             // txtAdSoyad
             // 
             this.txtAdSoyad.Location = new System.Drawing.Point(83, 25);
-            this.txtAdSoyad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAdSoyad.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdSoyad.Name = "txtAdSoyad";
             this.txtAdSoyad.Size = new System.Drawing.Size(103, 20);
             this.txtAdSoyad.TabIndex = 9;
@@ -144,7 +144,7 @@ namespace Wise_FitApp.UI
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(83, 58);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(151, 20);
             this.txtEmail.TabIndex = 10;
@@ -152,7 +152,7 @@ namespace Wise_FitApp.UI
             // txtYas
             // 
             this.txtYas.Location = new System.Drawing.Point(83, 92);
-            this.txtYas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtYas.Margin = new System.Windows.Forms.Padding(2);
             this.txtYas.Name = "txtYas";
             this.txtYas.Size = new System.Drawing.Size(76, 20);
             this.txtYas.TabIndex = 11;
@@ -160,7 +160,7 @@ namespace Wise_FitApp.UI
             // txtBoy
             // 
             this.txtBoy.Location = new System.Drawing.Point(83, 158);
-            this.txtBoy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBoy.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoy.Name = "txtBoy";
             this.txtBoy.Size = new System.Drawing.Size(76, 20);
             this.txtBoy.TabIndex = 13;
@@ -168,7 +168,7 @@ namespace Wise_FitApp.UI
             // txtKilo
             // 
             this.txtKilo.Location = new System.Drawing.Point(83, 192);
-            this.txtKilo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKilo.Margin = new System.Windows.Forms.Padding(2);
             this.txtKilo.Name = "txtKilo";
             this.txtKilo.Size = new System.Drawing.Size(76, 20);
             this.txtKilo.TabIndex = 14;
@@ -176,7 +176,7 @@ namespace Wise_FitApp.UI
             // txtKullaniciAdi
             // 
             this.txtKullaniciAdi.Location = new System.Drawing.Point(83, 225);
-            this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
             this.txtKullaniciAdi.Size = new System.Drawing.Size(103, 20);
             this.txtKullaniciAdi.TabIndex = 15;
@@ -184,7 +184,7 @@ namespace Wise_FitApp.UI
             // txtSifre
             // 
             this.txtSifre.Location = new System.Drawing.Point(82, 256);
-            this.txtSifre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSifre.Margin = new System.Windows.Forms.Padding(2);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(104, 20);
@@ -198,7 +198,7 @@ namespace Wise_FitApp.UI
             "Erkek",
             "Kadın"});
             this.cmbCinsiyet.Location = new System.Drawing.Point(83, 125);
-            this.cmbCinsiyet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCinsiyet.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCinsiyet.Name = "cmbCinsiyet";
             this.cmbCinsiyet.Size = new System.Drawing.Size(76, 21);
             this.cmbCinsiyet.TabIndex = 17;
@@ -207,7 +207,7 @@ namespace Wise_FitApp.UI
             // 
             this.btnKullanıcıEkle.Enabled = false;
             this.btnKullanıcıEkle.Location = new System.Drawing.Point(83, 312);
-            this.btnKullanıcıEkle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKullanıcıEkle.Margin = new System.Windows.Forms.Padding(2);
             this.btnKullanıcıEkle.Name = "btnKullanıcıEkle";
             this.btnKullanıcıEkle.Size = new System.Drawing.Size(75, 25);
             this.btnKullanıcıEkle.TabIndex = 18;
@@ -228,7 +228,7 @@ namespace Wise_FitApp.UI
             // txtSifreTekrar
             // 
             this.txtSifreTekrar.Location = new System.Drawing.Point(83, 285);
-            this.txtSifreTekrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSifreTekrar.Margin = new System.Windows.Forms.Padding(2);
             this.txtSifreTekrar.Name = "txtSifreTekrar";
             this.txtSifreTekrar.PasswordChar = '*';
             this.txtSifreTekrar.Size = new System.Drawing.Size(103, 20);
@@ -270,6 +270,7 @@ namespace Wise_FitApp.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(302, 347);
             this.Controls.Add(this.lblGereksinim);
             this.Controls.Add(this.lblEnAz1Sayi);
@@ -293,7 +294,7 @@ namespace Wise_FitApp.UI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewUserForm";

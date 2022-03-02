@@ -8,17 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wise_FitApp.Data;
+using Wise_FitApp.Model;
 
 namespace Wise_FitApp.UI
 {
     public partial class MainForm : Form
     {
         private AppDbContext db;
-
+        int girisYapanKullanici;
         public MainForm(int gelenKullaniciId, AppDbContext db)
         {
             InitializeComponent();
             this.db = db;
+            girisYapanKullanici = gelenKullaniciId;
+            gunlukAlinmasiGerekenKalori();
+        }
+
+        private void gunlukAlinmasiGerekenKalori()
+        {
+            Kullanici kullanici = db.Kullanici.FirstOrDefault(x=>x.kullaniciId==girisYapanKullanici);
+            if (kullanici.Cinsiyet == Cinsiyet.Kadin)
+            {
+                lblToplamKalori.Text = "0"+" / "+(Convert.ToDouble(10 * kullanici.Kilo) + (6.25 * Convert.ToDouble(kullanici.Boy)) - (5 * kullanici.Yas) - 161).ToString();
+            }
+            else
+            {
+                lblToplamKalori.Text ="0"+" / "+(Convert.ToDouble(10 * kullanici.Kilo) + (6.25 *Convert.ToDouble(kullanici.Boy))- (5 * kullanici.Yas) + 5).ToString();
+            }
         }
 
         private void raporToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,7 +62,7 @@ namespace Wise_FitApp.UI
 
         private void pbOgunEkle_Click(object sender, EventArgs e)
         {
-            OgunEkleForm ogunEkleForm = new OgunEkleForm();
+            OgunEkleForm ogunEkleForm = new OgunEkleForm(girisYapanKullanici,db);
             ogunEkleForm.ShowDialog();
         }
 

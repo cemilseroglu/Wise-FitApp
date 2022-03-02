@@ -17,7 +17,7 @@ namespace Wise_FitApp.Data
             //Property(x => x.OgunAdi).IsRequired().HasMaxLength(50);
             Property(x => x.OlusturulmaTarihi).IsRequired();
             Property(x => x.OgunTipi).IsRequired();
-            Property(x => x.ToplamKalori).IsOptional();
+            //Property(x => x.ToplamKalori).IsOptional();
             //List kullanicilar??
             //List besinler??
 
