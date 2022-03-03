@@ -121,6 +121,21 @@ namespace Wise_FitApp.UI
                 nudKalori.Value = 0;
 
             }
+            else
+            {
+                guncellenecekBesin.BesinAdi = txtBesinAdi.Text;
+                guncellenecekBesin.BesinKategorisi = cmbBesinKategori.Text;
+                guncellenecekBesin.Kalori = nudKalori.Value;
+
+                if (db.SaveChanges() > 0)
+                {
+                    BesinListele();
+                    MessageBox.Show("Güncelleme yapıldı");
+                    btnEkle.Text = "Ekle";
+                    txtBesinAdi.Clear();
+                    btnIptal.Visible = false;
+                }
+            }
         }
 
         private void silToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -139,7 +154,23 @@ namespace Wise_FitApp.UI
 
         private void btnIptal_Click(object sender, EventArgs e)
         {
-            this.Close();
+            btnEkle.Text = "Ekle";
+            txtBesinAdi.Clear();
+            btnIptal.Visible = false;
+        }
+        Besin guncellenecekBesin;
+        private void güncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvBesinListesi.SelectedRows.Count > 0)
+            {
+                btnEkle.Text = "Güncelle";
+                btnIptal.Visible = true;
+                guncellenecekBesin = (Besin)dgvBesinListesi.SelectedRows[0].DataBoundItem;
+                txtBesinAdi.Text = guncellenecekBesin.BesinAdi.ToString();
+                cmbBesinKategori.Text = guncellenecekBesin.BesinKategorisi.ToString();
+                nudKalori.Value = guncellenecekBesin.Kalori;
+            }
+
         }
     }
 }
