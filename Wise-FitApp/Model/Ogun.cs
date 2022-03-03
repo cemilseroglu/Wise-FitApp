@@ -19,7 +19,8 @@ namespace Wise_FitApp.Model
         public DateTime OlusturulmaTarihi { get; set; } = DateTime.Now;
         //public Ogunler OgunTipi { get; set; } //OgunTipi olarak değişecek
         public string OgunTipi { get; set; }
-        //public decimal? ToplamKalori { get; set; } // ? eklenmeli nullable sadece ef'de yapıldı.Denenecek.
+        public string OgunBesinAdi { get; set; }
+        public decimal? ToplamKalori { get; set; } // ? eklenmeli nullable sadece ef'de yapıldı.Denenecek.
         //public virtual List<Kullanici> Kullanicilar { get; set; } //Liste yerine kullanici/kullaniciid kullanilabilir çoka çok olmasına gerek yok.bire çok olucak.
         public int kullaniciId { get; set; }
         public Kullanici Kullanici { get; set; } //navigation property

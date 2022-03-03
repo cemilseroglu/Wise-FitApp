@@ -60,7 +60,6 @@ namespace Wise_FitApp.UI
                     MessageBox.Show("Besin Adı Boş Olamaz");
                     return;
                 }
-
                 besin.BesinAdi = txtBesinAdi.Text;
                 besin.Miktar = 1;
                 besin.Kalori = nudKalori.Value;

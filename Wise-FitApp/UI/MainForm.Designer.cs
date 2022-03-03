@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lblToplamKalori = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnListeYenile = new System.Windows.Forms.Button();
+            this.dgvOgunListesiMain = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pbOgunEkle = new System.Windows.Forms.PictureBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -40,10 +42,14 @@
             this.besinEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblAlinmasiGerekenKalori = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.label2 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOgunListesiMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOgunEkle)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblToplamKalori
@@ -53,13 +59,13 @@
             this.lblToplamKalori.Name = "lblToplamKalori";
             this.lblToplamKalori.Size = new System.Drawing.Size(214, 49);
             this.lblToplamKalori.TabIndex = 11;
-            this.lblToplamKalori.Text = "0/2100 (kcal)";
             this.lblToplamKalori.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.btnListeYenile);
+            this.panel1.Controls.Add(this.dgvOgunListesiMain);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pbOgunEkle);
             this.panel1.Location = new System.Drawing.Point(259, 41);
@@ -67,13 +73,31 @@
             this.panel1.Size = new System.Drawing.Size(850, 401);
             this.panel1.TabIndex = 9;
             // 
-            // dataGridView1
+            // btnListeYenile
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(71, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 385);
-            this.dataGridView1.TabIndex = 4;
+            this.btnListeYenile.Location = new System.Drawing.Point(71, 19);
+            this.btnListeYenile.Name = "btnListeYenile";
+            this.btnListeYenile.Size = new System.Drawing.Size(108, 23);
+            this.btnListeYenile.TabIndex = 5;
+            this.btnListeYenile.Text = "Listeyi Yenile";
+            this.btnListeYenile.UseVisualStyleBackColor = true;
+            this.btnListeYenile.Click += new System.EventHandler(this.btnListeYenile_Click);
+            // 
+            // dgvOgunListesiMain
+            // 
+            this.dgvOgunListesiMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOgunListesiMain.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvOgunListesiMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOgunListesiMain.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvOgunListesiMain.Location = new System.Drawing.Point(71, 45);
+            this.dgvOgunListesiMain.MultiSelect = false;
+            this.dgvOgunListesiMain.Name = "dgvOgunListesiMain";
+            this.dgvOgunListesiMain.ReadOnly = true;
+            this.dgvOgunListesiMain.RowHeadersVisible = false;
+            this.dgvOgunListesiMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOgunListesiMain.Size = new System.Drawing.Size(776, 352);
+            this.dgvOgunListesiMain.TabIndex = 4;
+            this.dgvOgunListesiMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvOgunListesiMain_MouseDown);
             // 
             // label1
             // 
@@ -100,8 +124,10 @@
             // monthCalendar1
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(10, 41);
+            this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 8;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // raporToolStripMenuItem
             // 
@@ -146,12 +172,38 @@
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(125, 350);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Günlük Kaloriyi Aştınız!!!";
+            this.label2.Visible = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(87, 26);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1121, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblToplamKalori);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.monthCalendar1);
@@ -161,12 +213,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOgunListesiMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOgunEkle)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,8 +236,12 @@
         private System.Windows.Forms.ToolStripMenuItem besinEkleToolStripMenuItem;
         private System.Windows.Forms.Label lblAlinmasiGerekenKalori;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvOgunListesiMain;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbOgunEkle;
+        private System.Windows.Forms.Button btnListeYenile;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
     }
 }

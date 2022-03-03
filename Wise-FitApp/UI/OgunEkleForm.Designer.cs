@@ -33,6 +33,7 @@
             this.btnEkle = new System.Windows.Forms.Button();
             this.btnIptal = new System.Windows.Forms.Button();
             this.dgvBesinListesiOgun = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBesinListesiOgun)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             "Öğle Yemeği",
             "Öğleden Sonra Atıştırması",
             "Akşam Yemeği"});
-            this.cmbOgunTipi.Location = new System.Drawing.Point(634, 50);
+            this.cmbOgunTipi.Location = new System.Drawing.Point(358, 50);
             this.cmbOgunTipi.Name = "cmbOgunTipi";
             this.cmbOgunTipi.Size = new System.Drawing.Size(168, 21);
             this.cmbOgunTipi.TabIndex = 3;
@@ -54,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(533, 48);
+            this.label2.Location = new System.Drawing.Point(262, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 4;
@@ -62,16 +63,17 @@
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(537, 462);
+            this.btnEkle.Location = new System.Drawing.Point(248, 448);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(127, 38);
             this.btnEkle.TabIndex = 6;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnIptal
             // 
-            this.btnIptal.Location = new System.Drawing.Point(670, 462);
+            this.btnIptal.Location = new System.Drawing.Point(399, 448);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(127, 38);
             this.btnIptal.TabIndex = 6;
@@ -95,14 +97,25 @@
             this.dgvBesinListesiOgun.RowHeadersWidth = 51;
             this.dgvBesinListesiOgun.RowTemplate.Height = 24;
             this.dgvBesinListesiOgun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBesinListesiOgun.Size = new System.Drawing.Size(795, 363);
+            this.dgvBesinListesiOgun.Size = new System.Drawing.Size(519, 363);
             this.dgvBesinListesiOgun.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(4, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 20);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Besin Listesi:";
             // 
             // OgunEkleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 512);
+            this.ClientSize = new System.Drawing.Size(552, 512);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBesinListesiOgun);
             this.Controls.Add(this.btnIptal);
             this.Controls.Add(this.btnEkle);
@@ -124,5 +137,6 @@
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.Button btnIptal;
         private System.Windows.Forms.DataGridView dgvBesinListesiOgun;
+        private System.Windows.Forms.Label label1;
     }
 }
