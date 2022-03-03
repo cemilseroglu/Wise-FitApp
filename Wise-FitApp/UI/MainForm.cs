@@ -52,7 +52,7 @@ namespace Wise_FitApp.UI
 
         private void raporToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RaporForm raporForm = new RaporForm();
+            RaporForm raporForm = new RaporForm(db,girisYapanKullanici);
             raporForm.ShowDialog();
         }
 
