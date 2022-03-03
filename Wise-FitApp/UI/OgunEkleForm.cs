@@ -64,5 +64,10 @@ namespace Wise_FitApp.UI
             //yeniOgun.Besinler = ???
             //TODO: dgvBesinListesiOgun'un seçili satırı eklenecekOgun.Besinler database'ine kaydedilmesini istiyorum.
         }
+
+        private void btnIptal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -39,6 +39,7 @@
             // 
             // cmbOgunTipi
             // 
+            this.cmbOgunTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOgunTipi.FormattingEnabled = true;
             this.cmbOgunTipi.Items.AddRange(new object[] {
             "Kahvaltı",
@@ -79,6 +80,7 @@
             this.btnIptal.TabIndex = 6;
             this.btnIptal.Text = "İptal";
             this.btnIptal.UseVisualStyleBackColor = true;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // dgvBesinListesiOgun
             // 

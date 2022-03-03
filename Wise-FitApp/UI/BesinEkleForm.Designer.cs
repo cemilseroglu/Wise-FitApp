@@ -91,6 +91,7 @@
             // 
             // cmbBesinKategori
             // 
+            this.cmbBesinKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBesinKategori.FormattingEnabled = true;
             this.cmbBesinKategori.Location = new System.Drawing.Point(167, 145);
             this.cmbBesinKategori.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
