@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -132,6 +133,33 @@ namespace Wise_FitApp.UI
 
             }
            
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            string eMailKontrol = txtEmail.Text;
+            if (GecerliEmail(eMailKontrol))
+            {
+            }
+            else
+            {
+                MessageBox.Show("e-mail adresi geçersiz.Lütfen geçerli bir mail adresi giriniz.");
+            }
+        }
+
+        private bool GecerliEmail(string eMailKontrol)
+        {
+            try
+            {
+                MailAddress mail = new MailAddress(eMailKontrol);
+                return true;
+
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
     }
 }

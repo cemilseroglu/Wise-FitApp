@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Wise_FitApp.Data;
+using System.Net.Mail;
 
 namespace Wise_FitApp.UI
 {
@@ -66,5 +67,7 @@ namespace Wise_FitApp.UI
                 txtSifre.UseSystemPasswordChar = false;
             }
         }
+
+        
     }
 }
