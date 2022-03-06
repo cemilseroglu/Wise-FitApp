@@ -22,7 +22,6 @@ namespace Wise_FitApp.UI
             InitializeComponent();
             this.id = id;
             this.db = db;
-
         }
         //Kullanıcının öğünlerini alıp foreachde dönüp kalori miktarını alabiliriz.
         private void GunlukKaloriSay()

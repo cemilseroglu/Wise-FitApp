@@ -64,54 +64,6 @@ namespace Wise_FitApp.UI
                 besin.Miktar = 1;
                 besin.Kalori = nudKalori.Value;
                 besin.KategoriId = (cmbBesinKategori.SelectedIndex + 1);
-                //if (cmbBesinKategori.SelectedIndex==0)
-                //{
-                //    besin.BesinKategorisi = "Balıklar";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 1)
-                //{
-                //    besin.BesinKategorisi = "Sakatatlar";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 2)
-                //{
-                //    besin.BesinKategorisi = "Kümes ve Av Hayvanları";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 3)
-                //{
-                //    besin.BesinKategorisi = "Sebzeler ve Baklagiller";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 4)
-                //{
-                //    besin.BesinKategorisi = "Meyveler";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 5)
-                //{
-                //    besin.BesinKategorisi = "Süt ve Süt Ürünleri";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 6)
-                //{
-                //    besin.BesinKategorisi = "Et ve Et Ürünleri";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 7)
-                //{
-                //    besin.BesinKategorisi = "Baharat ve Tat Vericiler";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 8)
-                //{
-                //    besin.BesinKategorisi = "Unlu Mamüller";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 8)
-                //{
-                //    besin.BesinKategorisi = "Tatlılar";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 8)
-                //{
-                //    besin.BesinKategorisi = "Çerez ve Kuru Yemişler";
-                //}
-                //else if (cmbBesinKategori.SelectedIndex == 9)
-                //{
-                //    besin.BesinKategorisi = "Diğer Besinler";
-                //}
                 besin.BesinKategorisi = this.cmbBesinKategori.GetItemText(this.cmbBesinKategori.SelectedItem);
                 db.Besinler.Add(besin);
                 db.SaveChanges();
@@ -133,7 +85,7 @@ namespace Wise_FitApp.UI
                     MessageBox.Show("Güncelleme yapıldı");
                     btnEkle.Text = "Ekle";
                     txtBesinAdi.Clear();
-                    btnIptal.Visible = false;
+                    btnIptal.Visible = true;
                 }
             }
         }
