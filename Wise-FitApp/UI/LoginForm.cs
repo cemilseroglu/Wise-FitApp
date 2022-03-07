@@ -15,9 +15,13 @@ namespace Wise_FitApp.UI
 {
     public partial class LoginForm : Form
     {
+        bool mouseDown;
+        private Point offset;
         public LoginForm()
         {
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#5e8d93");
+            panel1.BackColor = ColorTranslator.FromHtml("#5e8d93");
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -68,6 +72,30 @@ namespace Wise_FitApp.UI
             }
         }
 
-        
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
     }
 }

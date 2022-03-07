@@ -45,17 +45,22 @@
             this.lblAlinmasiGerekenKalori = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOgunListesiMain)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOgunEkle)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblToplamKalori
             // 
             this.lblToplamKalori.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblToplamKalori.Location = new System.Drawing.Point(22, 301);
+            this.lblToplamKalori.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblToplamKalori.Location = new System.Drawing.Point(33, 303);
             this.lblToplamKalori.Name = "lblToplamKalori";
             this.lblToplamKalori.Size = new System.Drawing.Size(214, 49);
             this.lblToplamKalori.TabIndex = 11;
@@ -68,14 +73,14 @@
             this.panel1.Controls.Add(this.dgvOgunListesiMain);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pbOgunEkle);
-            this.panel1.Location = new System.Drawing.Point(259, 41);
+            this.panel1.Location = new System.Drawing.Point(259, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 401);
+            this.panel1.Size = new System.Drawing.Size(850, 456);
             this.panel1.TabIndex = 9;
             // 
             // btnListeYenile
             // 
-            this.btnListeYenile.Location = new System.Drawing.Point(71, 19);
+            this.btnListeYenile.Location = new System.Drawing.Point(68, 6);
             this.btnListeYenile.Name = "btnListeYenile";
             this.btnListeYenile.Size = new System.Drawing.Size(108, 23);
             this.btnListeYenile.TabIndex = 5;
@@ -89,13 +94,13 @@
             this.dgvOgunListesiMain.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvOgunListesiMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOgunListesiMain.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgvOgunListesiMain.Location = new System.Drawing.Point(71, 45);
+            this.dgvOgunListesiMain.Location = new System.Drawing.Point(71, 33);
             this.dgvOgunListesiMain.MultiSelect = false;
             this.dgvOgunListesiMain.Name = "dgvOgunListesiMain";
             this.dgvOgunListesiMain.ReadOnly = true;
             this.dgvOgunListesiMain.RowHeadersVisible = false;
             this.dgvOgunListesiMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOgunListesiMain.Size = new System.Drawing.Size(776, 352);
+            this.dgvOgunListesiMain.Size = new System.Drawing.Size(776, 420);
             this.dgvOgunListesiMain.TabIndex = 4;
             this.dgvOgunListesiMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvOgunListesiMain_MouseDown);
             // 
@@ -116,7 +121,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 72);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(5, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 3;
@@ -125,7 +131,7 @@
             // pbOgunEkle
             // 
             this.pbOgunEkle.Image = ((System.Drawing.Image)(resources.GetObject("pbOgunEkle.Image")));
-            this.pbOgunEkle.Location = new System.Drawing.Point(9, 19);
+            this.pbOgunEkle.Location = new System.Drawing.Point(6, 6);
             this.pbOgunEkle.Name = "pbOgunEkle";
             this.pbOgunEkle.Size = new System.Drawing.Size(56, 50);
             this.pbOgunEkle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +143,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(10, 41);
+            this.monthCalendar1.Location = new System.Drawing.Point(13, 43);
             this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 8;
@@ -167,7 +173,8 @@
             // lblAlinmasiGerekenKalori
             // 
             this.lblAlinmasiGerekenKalori.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAlinmasiGerekenKalori.Location = new System.Drawing.Point(18, 212);
+            this.lblAlinmasiGerekenKalori.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAlinmasiGerekenKalori.Location = new System.Drawing.Point(29, 214);
             this.lblAlinmasiGerekenKalori.Name = "lblAlinmasiGerekenKalori";
             this.lblAlinmasiGerekenKalori.Size = new System.Drawing.Size(218, 64);
             this.lblAlinmasiGerekenKalori.TabIndex = 10;
@@ -176,39 +183,67 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AllowItemReorder = true;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.besinEkleToolStripMenuItem,
             this.egzersizToolStripMenuItem,
             this.raporToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1121, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(189, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(125, 350);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(136, 352);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Günlük Kaloriyi Aştınız!!!";
             this.label2.Visible = false;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.menuStrip1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1121, 37);
+            this.panel2.TabIndex = 13;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Wise_FitApp.Properties.Resources.icons8_close_64;
+            this.pictureBox1.Location = new System.Drawing.Point(1081, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1121, 450);
+            this.ClientSize = new System.Drawing.Size(1121, 502);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblToplamKalori);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.lblAlinmasiGerekenKalori);
-            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
@@ -221,6 +256,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbOgunEkle)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,5 +281,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

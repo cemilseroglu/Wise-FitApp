@@ -16,9 +16,13 @@ namespace Wise_FitApp.UI
     {
         private AppDbContext db;
         int girisYapanKullanici;
+        bool mouseDown;
+        private Point offset;
         public MainForm(int gelenKullaniciId, AppDbContext db)
         {
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#5e8d93");
+            panel2.BackColor = ColorTranslator.FromHtml("#5e8d93");
             this.db = db;
             girisYapanKullanici = gelenKullaniciId;
             ogunleriListele();
@@ -130,6 +134,33 @@ namespace Wise_FitApp.UI
                 ogunleriListele();
                 gunlukAlinmasiGerekenKalori();
             }
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+
         }
     }
 }

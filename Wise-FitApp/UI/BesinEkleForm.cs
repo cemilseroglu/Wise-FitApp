@@ -15,9 +15,13 @@ namespace Wise_FitApp.UI
     public partial class BesinEkleForm : Form
     {
         private readonly AppDbContext db;
+        bool mouseDown;
+        private Point offset;
         public BesinEkleForm(AppDbContext db)
         {
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#5e8d93");
+            panel1.BackColor = ColorTranslator.FromHtml("#5e8d93");
             this.db = db;
         }
 
@@ -123,6 +127,32 @@ namespace Wise_FitApp.UI
                 nudKalori.Value = guncellenecekBesin.Kalori;
             }
 
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
