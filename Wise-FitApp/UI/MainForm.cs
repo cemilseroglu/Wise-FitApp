@@ -9,11 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wise_FitApp.Data;
 using Wise_FitApp.Model;
-
+using System.Runtime.InteropServices;
 namespace Wise_FitApp.UI
 {
     public partial class MainForm : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+    int nLeftRect,
+    int nTopRect,
+    int nRightRect,
+    int nBottomRect,
+    int nWidthEllipse,
+    int nHeightEllipse
+    );
         private AppDbContext db;
         int girisYapanKullanici;
         bool mouseDown;
@@ -21,6 +30,7 @@ namespace Wise_FitApp.UI
         public MainForm(int gelenKullaniciId, AppDbContext db)
         {
             InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.BackColor = ColorTranslator.FromHtml("#5e8d93");
             panel2.BackColor = ColorTranslator.FromHtml("#5e8d93");
             this.db = db;
@@ -31,7 +41,7 @@ namespace Wise_FitApp.UI
 
         private void ogunleriListele()
         {
-            dgvOgunListesiMain.DataSource = db.Ogunler.Where(x =>x.kullaniciId == girisYapanKullanici && x.OlusturulmaTarihi == monthCalendar1.SelectionRange.Start.Date).ToList();//TODO
+            dgvOgunListesiMain.DataSource = db.Ogunler.Where(x => x.kullaniciId == girisYapanKullanici && x.OlusturulmaTarihi == monthCalendar1.SelectionRange.Start.Date).ToList();//TODO
         }
 
         private void gunlukAlinmasiGerekenKalori()
@@ -43,20 +53,20 @@ namespace Wise_FitApp.UI
             //label3.Text=sum.ToString();
             decimal total = dgvOgunListesiMain.Rows.Cast<DataGridViewRow>()
                 .Sum(t => Convert.ToDecimal(t.Cells[4].Value));
-            Kullanici kullanici = db.Kullanici.FirstOrDefault(x=>x.kullaniciId==girisYapanKullanici);
+            Kullanici kullanici = db.Kullanici.FirstOrDefault(x => x.kullaniciId == girisYapanKullanici);
             if (kullanici.Cinsiyet == Cinsiyet.Kadin)
             {
-                lblToplamKalori.Text = total.ToString()+" / "+(Convert.ToDouble(10 * kullanici.Kilo) + (6.25 * Convert.ToDouble(kullanici.Boy)) - (5 * kullanici.Yas) - 161).ToString();
+                lblToplamKalori.Text = total.ToString() + " / " + (Convert.ToDouble(10 * kullanici.Kilo) + (6.25 * Convert.ToDouble(kullanici.Boy)) - (5 * kullanici.Yas) - 161).ToString();
             }
             else
             {
-                lblToplamKalori.Text =total.ToString()+" / "+(Convert.ToDouble(10 * kullanici.Kilo) + (6.25 *Convert.ToDouble(kullanici.Boy))- (5 * kullanici.Yas) + 5).ToString();
+                lblToplamKalori.Text = total.ToString() + " / " + (Convert.ToDouble(10 * kullanici.Kilo) + (6.25 * Convert.ToDouble(kullanici.Boy)) - (5 * kullanici.Yas) + 5).ToString();
             }
         }
 
         private void raporToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RaporForm raporForm = new RaporForm(db,girisYapanKullanici);
+            RaporForm raporForm = new RaporForm(db, girisYapanKullanici);
             raporForm.ShowDialog();
         }
 
@@ -79,7 +89,7 @@ namespace Wise_FitApp.UI
 
         private void pbOgunEkle_Click(object sender, EventArgs e)
         {
-            OgunEkleForm ogunEkleForm = new OgunEkleForm(girisYapanKullanici,db);
+            OgunEkleForm ogunEkleForm = new OgunEkleForm(girisYapanKullanici, db);
             ogunEkleForm.ShowDialog();
         }
 

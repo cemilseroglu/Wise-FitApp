@@ -59,6 +59,7 @@
             this.dgvBesinListesi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvBesinListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBesinListesi.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvBesinListesi.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvBesinListesi.Location = new System.Drawing.Point(14, 189);
             this.dgvBesinListesi.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.dgvBesinListesi.MultiSelect = false;
@@ -150,7 +151,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(32, 35);
+            this.label4.Location = new System.Drawing.Point(41, 35);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(556, 20);
@@ -159,6 +160,7 @@
             // 
             // btnEkle
             // 
+            this.btnEkle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEkle.Location = new System.Drawing.Point(657, 143);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(115, 39);
@@ -182,6 +184,7 @@
             // 
             // btnIptal
             // 
+            this.btnIptal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIptal.Location = new System.Drawing.Point(530, 143);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(121, 39);

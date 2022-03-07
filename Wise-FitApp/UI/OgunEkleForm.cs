@@ -9,11 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wise_FitApp.Data;
 using Wise_FitApp.Model;
+using System.Runtime.InteropServices;
 
 namespace Wise_FitApp.UI
 {
     public partial class OgunEkleForm : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+    int nLeftRect,
+    int nTopRect,
+    int nRightRect,
+    int nBottomRect,
+    int nWidthEllipse,
+    int nHeightEllipse
+    );
+
+
+
         private readonly AppDbContext db;
         private readonly int id;
         bool mouseDown;
@@ -23,6 +36,7 @@ namespace Wise_FitApp.UI
             InitializeComponent();
             this.db = db;
             this.id = id;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.BackColor = ColorTranslator.FromHtml("#5e8d93");
             panel1.BackColor = ColorTranslator.FromHtml("#5e8d93");
 
@@ -74,10 +88,7 @@ namespace Wise_FitApp.UI
             this.Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
+
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -98,6 +109,11 @@ namespace Wise_FitApp.UI
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

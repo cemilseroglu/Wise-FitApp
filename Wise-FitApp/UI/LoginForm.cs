@@ -10,16 +10,30 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Wise_FitApp.Data;
 using System.Net.Mail;
+using System.Runtime.InteropServices;
 
 namespace Wise_FitApp.UI
 {
     public partial class LoginForm : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+            );
+
+
+
         bool mouseDown;
         private Point offset;
         public LoginForm()
         {
             InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.BackColor = ColorTranslator.FromHtml("#5e8d93");
             panel1.BackColor = ColorTranslator.FromHtml("#5e8d93");
         }

@@ -9,19 +9,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wise_FitApp.Data;
 using Wise_FitApp.Model;
+using System.Runtime.InteropServices;
 
 namespace Wise_FitApp.UI
 {
     public partial class BesinEkleForm : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+    int nLeftRect,
+    int nTopRect,
+    int nRightRect,
+    int nBottomRect,
+    int nWidthEllipse,
+    int nHeightEllipse
+    );
+
+
+
         private readonly AppDbContext db;
         bool mouseDown;
         private Point offset;
         public BesinEkleForm(AppDbContext db)
         {
             InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.BackColor = ColorTranslator.FromHtml("#5e8d93");
             panel1.BackColor = ColorTranslator.FromHtml("#5e8d93");
+            dgvBesinListesi.DefaultCellStyle.ForeColor = Color.Black;
             this.db = db;
         }
 
@@ -152,7 +167,7 @@ namespace Wise_FitApp.UI
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
     }
 }

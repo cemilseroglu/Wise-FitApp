@@ -10,17 +10,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wise_FitApp.Data;
 using Wise_FitApp.Model;
+using System.Runtime.InteropServices;
+
 
 namespace Wise_FitApp.UI
 {
     public partial class NewUserForm : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+    int nLeftRect,
+    int nTopRect,
+    int nRightRect,
+    int nBottomRect,
+    int nWidthEllipse,
+    int nHeightEllipse
+    );
         AppDbContext db;
         bool mouseDown;
         private Point offset;
         public NewUserForm()
         {
             InitializeComponent();
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.BackColor = ColorTranslator.FromHtml("#5e8d93");
             panel1.BackColor = ColorTranslator.FromHtml("#5e8d93");
         }
@@ -28,13 +40,13 @@ namespace Wise_FitApp.UI
         bool birSayi;
         private void btnKullanıcıEkle_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtAdSoyad.Text.Trim()) || string.IsNullOrEmpty(txtEmail.Text.Trim()) || string.IsNullOrEmpty(txtBoy.Text) || string.IsNullOrEmpty(txtKilo.Text) || string.IsNullOrEmpty(txtKullaniciAdi.Text.Trim()) || string.IsNullOrEmpty(txtSifre.Text.Trim()) || string.IsNullOrEmpty(txtSifreTekrar.Text.Trim()) || string.IsNullOrEmpty(txtYas.Text)||string.IsNullOrEmpty(cmbCinsiyet.Text)) 
+            if (string.IsNullOrEmpty(txtAdSoyad.Text.Trim()) || string.IsNullOrEmpty(txtEmail.Text.Trim()) || string.IsNullOrEmpty(txtBoy.Text) || string.IsNullOrEmpty(txtKilo.Text) || string.IsNullOrEmpty(txtKullaniciAdi.Text.Trim()) || string.IsNullOrEmpty(txtSifre.Text.Trim()) || string.IsNullOrEmpty(txtSifreTekrar.Text.Trim()) || string.IsNullOrEmpty(txtYas.Text) || string.IsNullOrEmpty(cmbCinsiyet.Text))
             {
                 MessageBox.Show("Bu alanlar boş geçilemez.");
             }
             else
             {
-                if (txtSifre.Text.Trim()!=txtSifreTekrar.Text.Trim())
+                if (txtSifre.Text.Trim() != txtSifreTekrar.Text.Trim())
                 {
                     MessageBox.Show("Şifreler uyuşmuyor.Doğru girdiğinizden emin olun.");
                 }
@@ -43,7 +55,7 @@ namespace Wise_FitApp.UI
                     db = new AppDbContext();
                     try
                     {
-                        if (db.Kullanici.Where(y=>y.Email==txtEmail.Text).Any())
+                        if (db.Kullanici.Where(y => y.Email == txtEmail.Text).Any())
                         {
                             MessageBox.Show("Bu email kullanılmakta,başka bir email giriniz.");
                             txtEmail.Clear();
@@ -75,9 +87,9 @@ namespace Wise_FitApp.UI
                     {
                         MessageBox.Show("lütfen doğru giriş yapınız.");
                     }
-                   
+
                 }
-                
+
 
             }
         }
@@ -94,7 +106,7 @@ namespace Wise_FitApp.UI
                 karakterSayisi();
                 void karakterSayisi()
                 {
-                    if (karakterler.Length>=6)
+                    if (karakterler.Length >= 6)
                     {
                         altiKarakter = true;
                         lbl6Karakter.ForeColor = Color.Green;
@@ -136,7 +148,7 @@ namespace Wise_FitApp.UI
                 }
 
             }
-           
+
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)
