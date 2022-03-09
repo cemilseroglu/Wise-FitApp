@@ -44,9 +44,10 @@
             this.besinEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblAlinmasiGerekenKalori = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.kiloGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOgunListesiMain)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -189,23 +190,14 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.besinEkleToolStripMenuItem,
             this.egzersizToolStripMenuItem,
-            this.raporToolStripMenuItem});
+            this.raporToolStripMenuItem,
+            this.kiloGüncelleToolStripMenuItem,
+            this.çıkışYapToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(189, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(463, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(136, 352);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Günlük Kaloriyi Aştınız!!!";
-            this.label2.Visible = false;
             // 
             // panel2
             // 
@@ -231,6 +223,20 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // kiloGüncelleToolStripMenuItem
+            // 
+            this.kiloGüncelleToolStripMenuItem.Name = "kiloGüncelleToolStripMenuItem";
+            this.kiloGüncelleToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.kiloGüncelleToolStripMenuItem.Text = "Kilo Güncelle";
+            this.kiloGüncelleToolStripMenuItem.Click += new System.EventHandler(this.kiloGüncelleToolStripMenuItem_Click);
+            // 
+            // çıkışYapToolStripMenuItem
+            // 
+            this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
+            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
+            this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,7 +244,6 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1121, 502);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblToplamKalori);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.monthCalendar1);
@@ -260,7 +265,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -278,10 +282,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbOgunEkle;
         private System.Windows.Forms.Button btnListeYenile;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem kiloGüncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem çıkışYapToolStripMenuItem;
     }
 }

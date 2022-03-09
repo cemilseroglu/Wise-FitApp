@@ -7,78 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using Wise_FitApp.Data;
 using Wise_FitApp.Model;
-using System.Runtime.InteropServices;
 
 namespace Wise_FitApp.UI
 {
-    public partial class OgunEkleForm : Form
+    public partial class KiloGuncelleForm : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
-    int nLeftRect,
-    int nTopRect,
-    int nRightRect,
-    int nBottomRect,
-    int nWidthEllipse,
-    int nHeightEllipse
-    );
+int nLeftRect,
+int nTopRect,
+int nRightRect,
+int nBottomRect,
+int nWidthEllipse,
+int nHeightEllipse
+);
 
-
-
-        private readonly AppDbContext db;
-        private readonly int id;
         bool mouseDown;
         private Point offset;
-        public OgunEkleForm(int id, AppDbContext db)
+        private readonly AppDbContext db;
+        private readonly int id;
+        Kullanici kullanici;
+
+
+        public KiloGuncelleForm(int id, AppDbContext db)
         {
             InitializeComponent();
-            this.db = db;
             this.id = id;
+            this.db = db;
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.BackColor = ColorTranslator.FromHtml("#5e8d93");
             panel1.BackColor = ColorTranslator.FromHtml("#5e8d93");
-
         }
-
-
-
-        private void OgunEkleForm_Load(object sender, EventArgs e)
+        private void KiloGuncelleForm_Load(object sender, EventArgs e)
         {
-            besinleriListele();
-
-            dgvBesinListesiOgun.Columns["Kategori"].Visible = false;
-            dgvBesinListesiOgun.Columns["BesinId"].Visible = false;
-            this.Text = DateTime.Now.ToString();
+            kullanici = db.Kullanici.FirstOrDefault(x => x.kullaniciId == id);
+            lblSistemdekiKilo.Text = "Sistemdeki kilonuz : " + kullanici.Kilo.ToString();
         }
-
-        private void besinleriListele()
-        {
-            dgvBesinListesiOgun.DataSource = db.Besinler.ToList();
-        }
-
-        private void btnEkle_Click(object sender, EventArgs e)
-        {     
-
-            Ogun yeniOgun = new Ogun();
-            yeniOgun.OlusturulmaTarihi = DateTime.Now.Date;
-            yeniOgun.kullaniciId = id;
-            yeniOgun.OgunTipi = this.cmbOgunTipi.GetItemText(this.cmbOgunTipi.SelectedItem);
-            yeniOgun.ToplamKalori = ((decimal)dgvBesinListesiOgun.SelectedRows[0].Cells[3].Value)*nudPorsiyon.Value;
-            yeniOgun.OgunBesinAdi = dgvBesinListesiOgun.SelectedRows[0].Cells[1].Value.ToString();
-            db.Ogunler.Add(yeniOgun);
-            db.SaveChanges();
-            MessageBox.Show("Öğün Eklendi.");
-        }
-
-        private void btnIptal_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;
@@ -106,5 +73,14 @@ namespace Wise_FitApp.UI
             this.Hide();
             frm.Show();
         }
+
+        private void btnKiloGuncelle_Click(object sender, EventArgs e)
+        {
+            kullanici.Kilo = (decimal)nudYeniKilo.Value;
+            db.SaveChanges();
+            lblSistemdekiKilo.Text = "Sistemdeki kilonuz : " + kullanici.Kilo.ToString();
+        }
+
+
     }
 }

@@ -74,11 +74,23 @@
     <Compile Include="UI\BesinEkleForm.Designer.cs">
       <DependentUpon>BesinEkleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\BesinIstatistikleriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BesinIstatistikleriForm.Designer.cs">
+      <DependentUpon>BesinIstatistikleriForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\EgzersizForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\EgzersizForm.Designer.cs">
       <DependentUpon>EgzersizForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\KiloGuncelleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\KiloGuncelleForm.Designer.cs">
+      <DependentUpon>KiloGuncelleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -125,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EgzersizForm.resx">
       <DependentUpon>EgzersizForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\KiloGuncelleForm.resx">
+      <DependentUpon>KiloGuncelleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -67,7 +67,9 @@ namespace Wise_FitApp.UI
         private void raporToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RaporForm raporForm = new RaporForm(db, girisYapanKullanici);
-            raporForm.ShowDialog();
+            this.Hide();
+            raporForm.Show();
+
         }
 
         private void egzersizToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,7 +92,8 @@ namespace Wise_FitApp.UI
         private void pbOgunEkle_Click(object sender, EventArgs e)
         {
             OgunEkleForm ogunEkleForm = new OgunEkleForm(girisYapanKullanici, db);
-            ogunEkleForm.ShowDialog();
+            this.Hide();
+            ogunEkleForm.Show();
         }
 
         private void pbOgunEkle_MouseEnter(object sender, EventArgs e)
@@ -171,6 +174,28 @@ namespace Wise_FitApp.UI
         {
             Environment.Exit(0);
 
+        }
+
+        private void çıkışYapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Çıkış yapmak istediğinize emin misiniz?", "Çıkış Yap", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                LoginForm loginForm = new LoginForm();
+                this.Hide();
+                loginForm.Show();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+        }
+
+        private void kiloGüncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KiloGuncelleForm kiloGuncelleForm = new KiloGuncelleForm(girisYapanKullanici, db);
+            this.Hide();
+            kiloGuncelleForm.Show();
         }
     }
 }

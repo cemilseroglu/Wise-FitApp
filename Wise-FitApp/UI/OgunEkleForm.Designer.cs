@@ -36,9 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nudPorsiyon = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBesinListesiOgun)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPorsiyon)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbOgunTipi
@@ -95,7 +98,7 @@
             this.dgvBesinListesiOgun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBesinListesiOgun.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvBesinListesiOgun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBesinListesiOgun.Location = new System.Drawing.Point(11, 59);
+            this.dgvBesinListesiOgun.Location = new System.Drawing.Point(11, 90);
             this.dgvBesinListesiOgun.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.dgvBesinListesiOgun.MultiSelect = false;
             this.dgvBesinListesiOgun.Name = "dgvBesinListesiOgun";
@@ -104,7 +107,7 @@
             this.dgvBesinListesiOgun.RowHeadersWidth = 51;
             this.dgvBesinListesiOgun.RowTemplate.Height = 24;
             this.dgvBesinListesiOgun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBesinListesiOgun.Size = new System.Drawing.Size(519, 363);
+            this.dgvBesinListesiOgun.Size = new System.Drawing.Size(519, 332);
             this.dgvBesinListesiOgun.TabIndex = 22;
             // 
             // label1
@@ -141,16 +144,37 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(266, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Porsiyon :";
+            // 
+            // nudPorsiyon
+            // 
+            this.nudPorsiyon.DecimalPlaces = 2;
+            this.nudPorsiyon.Location = new System.Drawing.Point(362, 66);
+            this.nudPorsiyon.Name = "nudPorsiyon";
+            this.nudPorsiyon.Size = new System.Drawing.Size(120, 20);
+            this.nudPorsiyon.TabIndex = 25;
+            // 
             // OgunEkleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 472);
+            this.Controls.Add(this.nudPorsiyon);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBesinListesiOgun);
             this.Controls.Add(this.btnIptal);
             this.Controls.Add(this.btnEkle);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbOgunTipi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -161,6 +185,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBesinListesiOgun)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPorsiyon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +200,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nudPorsiyon;
     }
 }
