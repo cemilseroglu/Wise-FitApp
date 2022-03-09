@@ -44,10 +44,11 @@
             this.besinEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblAlinmasiGerekenKalori = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kiloGüncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOgunListesiMain)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -55,13 +56,14 @@
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblToplamKalori
             // 
             this.lblToplamKalori.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblToplamKalori.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblToplamKalori.Location = new System.Drawing.Point(33, 303);
+            this.lblToplamKalori.Location = new System.Drawing.Point(33, 308);
             this.lblToplamKalori.Name = "lblToplamKalori";
             this.lblToplamKalori.Size = new System.Drawing.Size(214, 49);
             this.lblToplamKalori.TabIndex = 11;
@@ -195,9 +197,23 @@
             this.çıkışYapToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(463, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(343, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // kiloGüncelleToolStripMenuItem
+            // 
+            this.kiloGüncelleToolStripMenuItem.Name = "kiloGüncelleToolStripMenuItem";
+            this.kiloGüncelleToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.kiloGüncelleToolStripMenuItem.Text = "Kilo Güncelle";
+            this.kiloGüncelleToolStripMenuItem.Click += new System.EventHandler(this.kiloGüncelleToolStripMenuItem_Click);
+            // 
+            // çıkışYapToolStripMenuItem
+            // 
+            this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
+            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
+            this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -223,19 +239,15 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // kiloGüncelleToolStripMenuItem
+            // pictureBox2
             // 
-            this.kiloGüncelleToolStripMenuItem.Name = "kiloGüncelleToolStripMenuItem";
-            this.kiloGüncelleToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.kiloGüncelleToolStripMenuItem.Text = "Kilo Güncelle";
-            this.kiloGüncelleToolStripMenuItem.Click += new System.EventHandler(this.kiloGüncelleToolStripMenuItem_Click);
-            // 
-            // çıkışYapToolStripMenuItem
-            // 
-            this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
-            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
-            this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
+            this.pictureBox2.Image = global::Wise_FitApp.Properties.Resources.logo_size_invert;
+            this.pictureBox2.Location = new System.Drawing.Point(54, 357);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(165, 139);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
@@ -243,6 +255,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1121, 502);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblToplamKalori);
             this.Controls.Add(this.panel1);
@@ -264,6 +277,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,5 +302,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem kiloGüncelleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem çıkışYapToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
