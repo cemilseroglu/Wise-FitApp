@@ -96,7 +96,7 @@ namespace Wise_FitApp.UI
             dgvRaporListesi.Columns["Kullanici"].Visible = false;
             decimal total = dgvRaporListesi.Rows.Cast<DataGridViewRow>()
 .Sum(t => Convert.ToDecimal(t.Cells[4].Value));
-            lblPeriyodikKaloriToplam.Text = "Günlük Kalori Toplamı " + total.ToString() + " kcal";
+            lblPeriyodikKaloriToplam.Text = "Son Haftanın Kalori Toplamı " + total.ToString() + " kcal";
         }
 
 
