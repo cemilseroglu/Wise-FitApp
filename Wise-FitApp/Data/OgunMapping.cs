@@ -14,13 +14,10 @@ namespace Wise_FitApp.Data
         {
             ToTable("Ogunler");
 
-            //Property(x => x.OgunAdi).IsRequired().HasMaxLength(50);
             Property(x => x.OlusturulmaTarihi).IsRequired();
             Property(x => x.OgunTipi).IsRequired();
             Property(x => x.ToplamKalori).IsOptional();
             Property(x => x.OgunBesinAdi).IsRequired();
-            //List kullanicilar??
-            //List besinler??
 
         }
 

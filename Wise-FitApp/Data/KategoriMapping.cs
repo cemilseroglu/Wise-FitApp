@@ -18,7 +18,6 @@ namespace Wise_FitApp.Data
                 .IsRequired()
                 .HasMaxLength(50);
 
-            //List Besinleri nasıl dahil edeceğiz?
         }
     }
 }

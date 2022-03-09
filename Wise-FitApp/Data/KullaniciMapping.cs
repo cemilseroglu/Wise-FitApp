@@ -32,13 +32,6 @@ namespace Wise_FitApp.Data
 
             Property(x => x.Kilo)
                 .IsRequired();
-
-            //List Ogunleri nasıl dahil edeceğiz
-            
-            //TODO 18/02/2022 Buraya kadar yaptık.Foreign key'ler ve propertyler yazılacak.
-            //Migration oluşturularak database ayaklandırılacak....
-            //İş bölümü yapılacak.
-
                 
 
         }

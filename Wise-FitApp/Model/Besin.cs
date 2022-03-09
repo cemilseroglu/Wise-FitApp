@@ -8,7 +8,6 @@ namespace Wise_FitApp.Model
 {
     public class Besin
     {
-        //Porsiyon kısmında araştırmalar devam edecek.
         public Besin()
         {
             Ogunler = new List<Ogun>();
@@ -19,20 +18,11 @@ namespace Wise_FitApp.Model
         public decimal Kalori { get; set; }
         public string BesinKategorisi { get; set; }
         public int KategoriId { get; set; }
-        public Kategori Kategori { get; set; } //TODO : Navigation Property
-        public virtual List<Ogun> Ogunler { get; set; }  //virtual mantığını hoca ile görüşeceğiz.
-        //public Porsiyon Porsiyonlar { get; set; }
+        public Kategori Kategori { get; set; } 
+        public virtual List<Ogun> Ogunler { get; set; }  
 
     }
 }
 
-//public enum Porsiyon
-//{
-//    Dilim,SuBardagi,YemekKasigi,Adet //Çoğaltılabilir..
-//        //Porsiyon konusunda son karar : Ana birim bazında gr seçilerek ona göre ölçeklendirme yapılacaktır.
-//}
 
-//public enum BesinTipi
-//{
-//    Baliklar,Sakatatlar, KumesveAvHayvanlari //http://www.hanimeliyemek.com.tr/kalori-cetveli.html
-//}
+

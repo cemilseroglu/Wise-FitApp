@@ -14,19 +14,15 @@ namespace Wise_FitApp.Model
         {
             Ogunler = new List<Ogun>();
         }
-        //Günlük alınacak kalori database'de tutulabilir.Bunun için 
-        public int kullaniciId { get; set; } //guid??
+        public int kullaniciId { get; set; } 
         public string TamAd { get; set; }
         public string Email { get; set; }
         public string kullaniciAdi { get; set; }
-        public string Sifre { get; set; } //ASCII'de türkçe karakter yetersiz kalacak! //MD5  
+        public string Sifre { get; set; } 
         public decimal Boy { get; set; }
         public decimal Kilo { get; set; }
         public int Yas { get; set; }
         public Cinsiyet Cinsiyet { get; set; }
-        //public Amac Amac { get; set; }  //2 adet kalıtım aldırabilir miyiz??Class oluşturup..
-        //Amac konusu halen tartışılıyor.Rapor kısmında bu durum belirtile de bilir.
-
         public virtual List<Ogun> Ogunler { get; set; }
     }
 }
@@ -36,7 +32,3 @@ public enum Cinsiyet
     Erkek,Kadin
 }
 
-//public enum Amac
-//{
-//    KiloVerme,KiloAlma,Koruma
-//}
