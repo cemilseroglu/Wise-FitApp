@@ -41,26 +41,21 @@ namespace Wise_FitApp.UI
 
         private void ogunleriListele()
         {
-            dgvOgunListesiMain.DataSource = db.Ogunler.Where(x => x.kullaniciId == girisYapanKullanici && x.OlusturulmaTarihi == monthCalendar1.SelectionRange.Start.Date).ToList();//TODO
+            dgvOgunListesiMain.DataSource = db.Ogunler.Where(x => x.kullaniciId == girisYapanKullanici && x.OlusturulmaTarihi == monthCalendar1.SelectionRange.Start.Date).ToList();
         }
 
         private void gunlukAlinmasiGerekenKalori()
         {
-            //for (int i = 0; i < dgvOgunListesiMain.Rows.Count; i++)
-            //{
-            //    sum += Convert.ToDecimal(dgvOgunListesiMain.Rows[i].Cells[4].Value);
-            //}
-            //label3.Text=sum.ToString();
             decimal total = dgvOgunListesiMain.Rows.Cast<DataGridViewRow>()
                 .Sum(t => Convert.ToDecimal(t.Cells[4].Value));
             Kullanici kullanici = db.Kullanici.FirstOrDefault(x => x.kullaniciId == girisYapanKullanici);
             if (kullanici.Cinsiyet == Cinsiyet.Kadin)
             {
-                lblToplamKalori.Text = total.ToString() + " / " + (Convert.ToDouble(10 * kullanici.Kilo) + (6.25 * Convert.ToDouble(kullanici.Boy)) - (5 * kullanici.Yas) - 161).ToString();
+                lblToplamKalori.Text = total.ToString() + " / " + (Convert.ToDouble(10 * kullanici.Kilo) + (6.25 * Convert.ToDouble(kullanici.Boy)) - (5 * kullanici.Yas) - 161).ToString() + " kcal";
             }
             else
             {
-                lblToplamKalori.Text = total.ToString() + " / " + (Convert.ToDouble(10 * kullanici.Kilo) + (6.25 * Convert.ToDouble(kullanici.Boy)) - (5 * kullanici.Yas) + 5).ToString();
+                lblToplamKalori.Text = total.ToString() + " / " + (Convert.ToDouble(10 * kullanici.Kilo) + (6.25 * Convert.ToDouble(kullanici.Boy)) - (5 * kullanici.Yas) + 5).ToString()+" kcal";
             }
         }
 
@@ -69,7 +64,6 @@ namespace Wise_FitApp.UI
             RaporForm raporForm = new RaporForm(db, girisYapanKullanici);
             this.Hide();
             raporForm.Show();
-
         }
 
         private void egzersizToolStripMenuItem_Click(object sender, EventArgs e)

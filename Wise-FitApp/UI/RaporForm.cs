@@ -46,7 +46,43 @@ namespace Wise_FitApp.UI
         {
 
         }
-
+        private void ButunOgunuListele()
+        {
+            dgvRaporListesi.DataSource = db.Ogunler.Where(x => x.kullaniciId == id).ToList();
+            dgvRaporListesi.Columns["OgunId"].Visible = false;
+            dgvRaporListesi.Columns["kullaniciId"].Visible = false;
+            dgvRaporListesi.Columns["Kullanici"].Visible = false;
+            decimal total = dgvRaporListesi.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToDecimal(t.Cells[4].Value));
+            lblPeriyodikKaloriToplam.Text = "Bütün Öğünlerin Kalori Toplamı " + total.ToString() + " kcal";
+        }
+        private void btnButunListe_Click(object sender, EventArgs e)
+        {
+            ButunOgunuListele();
+        }
+        private void SeciliPeriyoduListele(int oncekiGunSayisi)
+        {
+            dgvRaporListesi.DataSource = db.Ogunler.Where(x => x.kullaniciId == id && x.OlusturulmaTarihi >= System.Data.Entity.DbFunctions.AddDays(DateTime.Now, -oncekiGunSayisi)).ToList();
+        }
+        private void btnHaftalikListe_Click(object sender, EventArgs e)
+        {
+            int oncekiGun = 7;
+            SeciliPeriyoduListele(oncekiGun);
+            dgvRaporListesi.Columns["OgunId"].Visible = false;
+            dgvRaporListesi.Columns["kullaniciId"].Visible = false;
+            dgvRaporListesi.Columns["Kullanici"].Visible = false;
+            decimal total = dgvRaporListesi.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToDecimal(t.Cells[4].Value));
+            lblPeriyodikKaloriToplam.Text = "Son Haftanın Kalori Toplamı " + total.ToString() + " kcal";
+        }
+        private void btnAylikListe_Click(object sender, EventArgs e)
+        {
+            int oncekiGun = 30;
+            SeciliPeriyoduListele(oncekiGun);
+            dgvRaporListesi.Columns["OgunId"].Visible = false;
+            dgvRaporListesi.Columns["kullaniciId"].Visible = false;
+            dgvRaporListesi.Columns["Kullanici"].Visible = false;
+            decimal total = dgvRaporListesi.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToDecimal(t.Cells[4].Value));
+            lblPeriyodikKaloriToplam.Text = "Aylık Öğünlerin Kalori Toplamı " + total.ToString() + " kcal";
+        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -76,52 +112,16 @@ namespace Wise_FitApp.UI
             mouseDown = false;
         }
 
-        private void ButunOgunuListele()
-        {
-            dgvRaporListesi.DataSource = db.Ogunler.Where(x => x.kullaniciId == id).ToList();
-            dgvRaporListesi.Columns["OgunId"].Visible = false;
-            dgvRaporListesi.Columns["kullaniciId"].Visible = false;
-            dgvRaporListesi.Columns["Kullanici"].Visible = false;
-            decimal total = dgvRaporListesi.Rows.Cast<DataGridViewRow>()
-.Sum(t => Convert.ToDecimal(t.Cells[4].Value));
-            lblPeriyodikKaloriToplam.Text = "Bütün Öğünlerin Kalori Toplamı " + total.ToString() + " kcal";
-        }
-
-        private void btnHaftalikListe_Click(object sender, EventArgs e)
-        {
-            int oncekiGun = 7;
-            SeciliPeriyoduListele(oncekiGun);
-            dgvRaporListesi.Columns["OgunId"].Visible = false;
-            dgvRaporListesi.Columns["kullaniciId"].Visible = false;
-            dgvRaporListesi.Columns["Kullanici"].Visible = false;
-            decimal total = dgvRaporListesi.Rows.Cast<DataGridViewRow>()
-.Sum(t => Convert.ToDecimal(t.Cells[4].Value));
-            lblPeriyodikKaloriToplam.Text = "Son Haftanın Kalori Toplamı " + total.ToString() + " kcal";
-        }
 
 
 
-        private void SeciliPeriyoduListele(int oncekiGunSayisi)
-        {
-            dgvRaporListesi.DataSource = db.Ogunler.Where(x => x.kullaniciId == id && x.OlusturulmaTarihi >= System.Data.Entity.DbFunctions.AddDays(DateTime.Now, -oncekiGunSayisi)).ToList();
-        }
 
-        private void btnAylikListe_Click(object sender, EventArgs e)
-        {
-            int oncekiGun = 30;
-            SeciliPeriyoduListele(oncekiGun);
-            dgvRaporListesi.Columns["OgunId"].Visible = false;
-            dgvRaporListesi.Columns["kullaniciId"].Visible = false;
-            dgvRaporListesi.Columns["Kullanici"].Visible = false;
-            decimal total = dgvRaporListesi.Rows.Cast<DataGridViewRow>()
-.Sum(t => Convert.ToDecimal(t.Cells[4].Value));
-            lblPeriyodikKaloriToplam.Text = "Aylık Öğünlerin Kalori Toplamı " + total.ToString() + " kcal";
-        }
 
-        private void btnButunListe_Click(object sender, EventArgs e)
-        {
-            ButunOgunuListele();
-        }
+
+
+
+
+
 
         private void btnBesinIstatistikleri_Click(object sender, EventArgs e)
         {

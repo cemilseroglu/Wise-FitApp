@@ -81,7 +81,7 @@
             // 
             // btnKiloGuncelle
             // 
-            this.btnKiloGuncelle.Location = new System.Drawing.Point(183, 83);
+            this.btnKiloGuncelle.Location = new System.Drawing.Point(242, 83);
             this.btnKiloGuncelle.Name = "btnKiloGuncelle";
             this.btnKiloGuncelle.Size = new System.Drawing.Size(90, 63);
             this.btnKiloGuncelle.TabIndex = 3;
@@ -100,6 +100,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KiloGuncelleForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KiloGuncelleForm";
             this.Load += new System.EventHandler(this.KiloGuncelleForm_Load);
             this.panel1.ResumeLayout(false);
